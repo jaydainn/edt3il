@@ -1,0 +1,17 @@
+{
+  "name": "edt3il",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ics": "^2.26.2",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "xml2js": "^0.4.23"
+  }
+}
