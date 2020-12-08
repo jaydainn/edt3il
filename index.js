@@ -1,6 +1,6 @@
 var fetch = require('node-fetch');
 var fs = require('fs');
- var   xml2js = require('xml2js').parseString;
+var   xml2js = require('xml2js').parseString;
 const ics = require('ics');
 let events = [];
 let crenarr = [{ id: 1, start: "08:30", end: "10:00" }, { id: 2, start: "10:30", end: "12:00" }, { id: 3, start: "12:00", end: "13:30" }, { id: 4, start: "13:30", end: "15:00" }, { id: 5, start: "15:15", end: "16:45" }, { id: 6, start: "17:00", end: "18:30" }]
