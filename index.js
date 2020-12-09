@@ -5,6 +5,7 @@ const ics = require('ics');
 let events = [];
 let crenarr = [{ id: 1, start: "08:30", end: "10:00" }, { id: 2, start: "10:30", end: "12:00" }, { id: 3, start: "12:00", end: "13:30" }, { id: 4, start: "13:30", end: "15:00" }, { id: 5, start: "15:15", end: "16:45" }, { id: 6, start: "17:00", end: "18:30" }]
 var data = "";
+const icsToJson = require('ics-to-json');
 const { exec } = require("child_process");
 let res;
 fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", {
@@ -77,7 +78,11 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
 
 
 
-            console.log(events)
+            //console.log(events)
+
+            console.log(icsToJson.default)
+            const prevEvents = fs.readFileSync('./i1g5.ics');
+            console.log(prevEvents);
 
 
             fs.writeFileSync("./i1g5.ics", value);
