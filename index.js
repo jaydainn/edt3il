@@ -7,6 +7,7 @@ let crenarr = [{ id: 1, start: "08:30", end: "10:00" }, { id: 2, start: "10:30",
 var data = "";
 const icsToJson = require('ics-to-json');
 const { exec } = require("child_process");
+const { duration } = require('moment');
 let res;
 fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", {
     headers: {
@@ -114,12 +115,17 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
                     let hour = parseInt(datestr.substring(8 , 10)) + 1
                     let mins = parseInt(datestr.substring(10 , 12));
                     //console.log(datestr)
-                    console.log(year+" "+month+" "+day+" "+hour+" "+mins)
+                    //console.log(year+" "+month+" "+day+" "+hour+" "+mins)
 
                     let timedat = [year , month , day , hour , mins];
                     let tit = ev.summary;
-
-                   console.log(ev.location)
+                    events.push({
+                        title: tit,
+                        start: timedat,
+                        location: ev.location , 
+                        duration: duration
+                    })
+                   //console.log(ev.location)
                 })
             }
 
