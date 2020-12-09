@@ -96,7 +96,7 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
                         let index = events.indexOf(ev);
                         events.splice(index, 1);
                     } else {
-                        console.log(true + " " + evdate + " " + ev.title + " " + prevev.summary + " " + prevev.startDate)
+                        console.log(false + " " + evdate + " " + ev.title + " " + prevev.summary + " " + prevev.startDate)
                     }
                     // console.log(ev)
                 })
