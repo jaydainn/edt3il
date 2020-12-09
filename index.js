@@ -105,6 +105,7 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
             })
 
             if (events.length > 0) {
+                
 
                 fs.writeFileSync("./i1g5.ics", value);
             }
