@@ -79,7 +79,7 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
 
 
 
-            //console.log(events)
+            console.log(events)
 
             //console.log(icsToJson.default)
             const prevEvents = icsToJson.default(fs.readFileSync('./i1g5.ics', 'utf-8'));
