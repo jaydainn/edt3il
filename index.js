@@ -101,7 +101,7 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml" ,
 
 const { exec } = require("child_process");
 
-exec("ls -la", (error, stdout, stderr) => {
+exec("dir", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
