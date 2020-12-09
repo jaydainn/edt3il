@@ -115,6 +115,11 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
                     let mins = parseInt(datestr.substring(10 , 12));
                     //console.log(datestr)
                     console.log(year+" "+month+" "+day+" "+hour+" "+mins)
+
+                    let timedat = [year , month , day , hour , mins];
+                    let tit = ev.summary;
+
+                   console.log(ev.location)
                 })
             }
 
