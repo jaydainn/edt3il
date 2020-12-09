@@ -105,7 +105,7 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
             })
 
             if (events.length > 0) {
-                if(prevEvents.isArray){
+                if(prevEvents){
                 prevEvents.map((ev) => {
                     let datestr = ev.startDate.replace('00Z' , "").replace('T' , '');
                     let year = parseInt(datestr.substring(0,4));
