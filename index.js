@@ -81,31 +81,34 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
             //console.log(events)
 
             //console.log(icsToJson.default)
-            const prevEvents = icsToJson.default(fs.readFileSync('./i1g5.ics' , 'utf-8'));
+            const prevEvents = icsToJson.default(fs.readFileSync('./i1g5.ics', 'utf-8'));
             prevEvents.map((prevev) => {
                 events.map((ev) => {
-                    const hour = ev.start[3] -1;
-                    let minutes = ev.start[4] < 10 ? '0'+ev.start[4] : ev.start[4].toString();
-                    let day = ev.start[2] < 10 ? '0'+ev.start[2] : ev.start[2].toString();
-                    let month = ev.start[1] < 10 ? '0'+ev.start[1] : ev.start[1].toString();
+                    const hour = ev.start[3] - 1;
+                    let minutes = ev.start[4] < 10 ? '0' + ev.start[4] : ev.start[4].toString();
+                    let day = ev.start[2] < 10 ? '0' + ev.start[2] : ev.start[2].toString();
+                    let month = ev.start[1] < 10 ? '0' + ev.start[1] : ev.start[1].toString();
 
-                    let evdate = ev.start[0].toString() +month+day+'T'+hour+minutes+'00Z'
-                   // console.log(evdate + " "+ prevev.startDate)
-                    if(prevev.summary == ev.title && prevev.startDate == evdate){
-                        console.log(true+" " + evdate+ " " + ev.title + " " + prevev.summary + " "+ prevev.startDate)
-                    }else{
-                        console.log(true+" " + evdate+ " " + ev.title + " " + prevev.summary + " "+ prevev.startDate)
+                    let evdate = ev.start[0].toString() + month + day + 'T' + hour + minutes + '00Z'
+                    // console.log(evdate + " "+ prevev.startDate)
+                    if (prevev.summary == ev.title && prevev.startDate == evdate) {
+                        console.log(true + " " + evdate + " " + ev.title + " " + prevev.summary + " " + prevev.startDate)
+                        let index = events.indexOf(ev);
+                        events.splice(index, 1);
+                    } else {
+                        console.log(true + " " + evdate + " " + ev.title + " " + prevev.summary + " " + prevev.startDate)
                     }
-                   // console.log(ev)
+                    // console.log(ev)
                 })
 
             })
-            
 
+            if (events.length > 0) {
 
-            fs.writeFileSync("./i1g5.ics", value);
+                fs.writeFileSync("./i1g5.ics", value);
+            }
 
-
+            console.log(events);
 
             exec("upload.bat", (error, stdout, stderr) => {
                 if (error) {
