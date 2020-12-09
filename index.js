@@ -84,7 +84,8 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
             const prevEvents = icsToJson.default(fs.readFileSync('./i1g5.ics', 'utf-8'));
             prevEvents.map((prevev) => {
                 events.map((ev) => {
-                    const hour = ev.start[3] - 1;
+                    let hour = ev.start[3] - 1;
+                     hour = hour < 10 ? '0' + hour : hour.toString();
                     let minutes = ev.start[4] < 10 ? '0' + ev.start[4] : ev.start[4].toString();
                     let day = ev.start[2] < 10 ? '0' + ev.start[2] : ev.start[2].toString();
                     let month = ev.start[1] < 10 ? '0' + ev.start[1] : ev.start[1].toString();
