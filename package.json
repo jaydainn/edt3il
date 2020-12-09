@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "child-process": "^1.0.2",
     "ics": "^2.26.2",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
