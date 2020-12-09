@@ -108,7 +108,7 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
                 fs.writeFileSync("./i1g5.ics", value);
             }
 
-            console.log(events);
+            console.log("🚧 # of events"+ events.length);
 
             exec("upload.bat", (error, stdout, stderr) => {
                 if (error) {
