@@ -85,10 +85,11 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
             prevEvents.map((prevev) => {
                 events.map((ev) => {
                     const evdate = ev.start[0]+ev.start[1]+ev.start[2]+'T'+ev.start[3]+ev.start[4]+'00Z'
-                    console.log(evdate + " "+ prevev.startDate)
+                    //console.log(evdate + " "+ prevev.startDate)
                     if(prevev.summary == ev.title && prevev.startDate == evdate){
                         console.log(true + evdate + ev.title)
                     }
+                    console.log(ev)
                 })
 
             })
