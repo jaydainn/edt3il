@@ -108,12 +108,13 @@ fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", 
                 if(prevEvents){
                 prevEvents.map((ev) => {
                     let datestr = ev.startDate.replace('00Z' , "").replace('T' , '');
-                    let year = datestr.substring(0,4);
-                    let month = datestr.substring(3 , 2);
-                    let day = datestr.substring(5 , 2 )
-                    let hour = datestr.substring(7 , 2)
-                    let mins = datestr.substring(9 , 2);
-                    console.log(year+month+day+hour+mins)
+                    let year = parseInt(datestr.substring(0,4));
+                    let month = parseInt(datestr.substring(3 , 2));
+                    let day = parseInt(datestr.substring(5 , 2 ))
+                    let hour = parseInt(datestr.substring(7 , 2))
+                    let mins = parseInt(datestr.substring(9 , 2));
+                    console.log(datestr)
+                   // console.log(year+month+day+hour+mins)
                 })
             }
 
