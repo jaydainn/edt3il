@@ -9,7 +9,7 @@ const icsToJson = require('ics-to-json');
 const { exec } = require("child_process");
 const { duration } = require('moment');
 let res;
-fetch("https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml", {
+fetch("https://eleves.groupe3il.fr/edt_eleves/I2%20Groupe%205%20FA.xml", {
     headers: {
         "Content-Type": 'text/plain; charset=UTF-8',
     }
