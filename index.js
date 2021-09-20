@@ -85,7 +85,7 @@ groups.map(group => {
                 console.log(events)
     
                 //console.log(icsToJson.default)
-                const prevEvents = icsToJson.default(fs.readFileSync('./i1g5.ics', 'utf-8'));
+                const prevEvents = icsToJson.default(fs.readFileSync('./'+group.id+'.ics', 'utf-8'));
                 prevEvents.map((prevev) => {
                     events.map((ev) => {
                         let hour = ev.start[3] - 1;
