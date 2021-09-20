@@ -126,7 +126,7 @@ groups.map(group => {
                             title: tit,
                             start: timedat,
                             location: ev.location , 
-                            duration: duration
+                            duration: { hours: 1, minutes: 30 }
                         })
                        //console.log(ev.location)
                     })
