@@ -8,7 +8,7 @@ var data = "";
 const icsToJson = require('ics-to-json');
 const { exec } = require("child_process");
 const { duration } = require('moment');
-let groups = [{url: "https://eleves.groupe3il.fr/edt_eleves/I2%20Groupe%205%20FA.xml"  , id: "i1g5"} , {url: "https://eleves.groupe3il.fr/edt_eleves/I2%20Groupe%206%20FA.xml"  , id: "i2g6"}  , {url: "https://eleves.groupe3il.fr/edt_eleves/I1%20Groupe%205%20Apprentis.xml"  , id: "i1g5A"} ]
+let groups = [{url: "https://eleves.groupe3il.fr/edt_eleves/I2%20Groupe%205%20FA.xml"  , id: "i1g5"}  ]
 let res;
 
 groups.map(group => {
